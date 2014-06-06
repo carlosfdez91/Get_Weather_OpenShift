@@ -1,4 +1,4 @@
-from bottle import route, get, post, run, template, request, static_file
+from bottle import route, get, post, run, template, request, static_file, default_app
 from busqueda import buscar
 
 # @route('/')
