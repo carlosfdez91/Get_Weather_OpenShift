@@ -6,5 +6,5 @@ setup(name='GetWeather',
       author='CarlosFdez91',
       author_email='carlosfernandez16@gmail.com',
       url='getweather-carlosfdez91.rhcloud.com',
-      install_requires=['bottle','requests'],
+      install_requires=['bottle','requests','lxml'],
      )
