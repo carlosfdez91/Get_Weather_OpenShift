@@ -7,7 +7,7 @@ def buscar(text):
 	yweatherns = "{http://xml.weather.yahoo.com/ns/rss/1.0}"
 
 	nombre = text.lower()
-	nombresin = nombre.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("n","ñ");
+	nombresin = nombre.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ñ","n");
 	
 	codigos = open("codigos.txt","r")
 
