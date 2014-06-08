@@ -1,5 +1,6 @@
 from bottle import route, get, post, run, template, request, static_file, default_app
 from busqueda import buscar
+codigos = open('codigos.txt','r')
 
 # @route('/')
 # def index():
@@ -16,7 +17,7 @@ def server_static(filename):
 @post('/resultado')
 def busqueda():
 	text = request.forms.get('text')
-	prevision = buscar(text)
+	prevision = buscar(text,codigos)
 	return template("resultado.html",datos=prevision)
 
 import os

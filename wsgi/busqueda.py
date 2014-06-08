@@ -1,5 +1,5 @@
 #coding: utf-8
-def buscar(text):
+def buscar(text,codigos):
 	import os
 	import requests
 	from lxml import etree
@@ -10,8 +10,6 @@ def buscar(text):
 	nombre = text.lower()
 	nombresin = nombre.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ñ","n");
 	
-	codigos = open('codigos','r')
-
 	encontrado = False
 	
 	for linea in codigos:
