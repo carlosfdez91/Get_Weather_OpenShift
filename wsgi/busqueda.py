@@ -1,15 +1,17 @@
 #coding: utf-8
-codigos = open('codigos','r')
 def buscar(text):
 	import os
 	import requests
 	from lxml import etree
+	from bottle import static_file
 
 	yweatherns = "{http://xml.weather.yahoo.com/ns/rss/1.0}"
 
 	nombre = text.lower()
 	nombresin = nombre.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ñ","n");
 	
+	codigos = open('codigos','r')
+
 	encontrado = False
 	
 	for linea in codigos:
