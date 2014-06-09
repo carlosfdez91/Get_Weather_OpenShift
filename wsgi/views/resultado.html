@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 	<link rel="shortcut icon" href="static/images/favicon.ico">
 	<head>
-		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>{{ datos['city'] }} - Get Weather!</title >
 	</head>
 		<body>
@@ -12,17 +12,30 @@
     			<img src="static/images/icono.png" alt="Get Weather!" /> 
      			</a>
   			</h1>
-			<h1>Previsión Metereológica de {{ datos['tiempode'] }}</h1>
+			<h1>Previsión Metereológica de {{ datos['city'] }}</h1>
 				{% for elemento in datos %}
-			<h2>-Valores detallados:</h2>
-			<ul>
-				<li>Fecha y hora de la actualización de datos: {{ datos['fechayhora'] }}</li>
-				<li>Temperatura actual: {{ datos['tempactual'] }} º {{ datos['grados'] }}, Condición actual: {{ datos['reemplazar'] }}</li>
-				<img src="static/images/{{ datos['cielo'] }}.png" width=285 height=200>
-				<li>Viento: Sensación térmica {{ datos['sensacion'] }} º {{ datos['grados'] }}, Dirección {{ datos['direccion'] }}, Velocidad {{ datos['velocidad'] }} {{ datos['speed'] }}</li>
-				<li>Atmósfera: Humedad {{ datos['humedad'] }} por ciento, Visibilidad {{ datos['vision'] }}, {{ datos['km'] }}, Presión {{ datos['presion'] }} {{ datos['press'] }}</li>
-				<li>Astronomía: {{ datos['sol'] }}, Amanecer: Ocaso: {{ datos['puesta'] }}</li>
-			</ul>
+			<h2> <img src="static/images/{{ datos['cielo'] }}.png" title="{{ datos['reemplazar'] }}" width=285 height=200>Temperatura actual {{ datos['tempactual'] }} ° {{ datos['grados'] }}</h2>
+			<!-- <ul>
+				<li>Temperatura actual: {{ datos['tempactual'] }} ° {{ datos['grados'] }}, Condición actual: {{ datos['reemplazar'] }}</li>
+				<img src="static/images/{{ datos['cielo'] }}.png" title="{{ datos['reemplazar'] }}" width=285 height=200>
+				<li>Viento: Sensación térmica {{ datos['sensacion'] }} ° {{ datos['grados'] }}, Dirección {{ datos['direccion'] }}, Velocidad {{ datos['velocidad'] }} {{ datos['speed'] }}</li>
+			</ul> -->
+			<h2>Valores detallados:</h2>
+			<table class="table table-striped table-bordered table-condensed">
+			<tbody>
+				<tr><td>Temperatura actual</td><td>{{ datos['tempactual'] }} ° {{ datos['grados'] }}</td></tr>
+				<tr><td>Nubosidad</td><td>{{ datos['reemplazar'] }}</td></tr>
+				<tr><td>Sensación térmica<br></td><td>{{ datos['sensacion'] }} ° {{ datos['grados'] }}</td></tr>
+				<tr><td>Viento</td><td>{{ datos['direccion'] }} °<br>{{ datos['velocidad'] }} {{ datos['speed'] }}</td></tr>
+				<tr><td>Humedad</td><td>{{ datos['humedad'] }} %</td></tr>
+				<tr><td>Visibilidad<br></td><td>{{ datos['vision'] }} {{ datos['km'] }}</td></tr>
+				<tr><td>Presión<br></td><td>{{ datos['presion'] }} {{ datos['press'] }}</td></tr>
+				<tr><td>Amanecer</td><td id="sunrise">{{ datos['sol'] }}</td></tr>
+				<tr><td>Ocaso</td><td id="sunset">{{ datos['puesta'] }}</td></tr>
+
+				<tr><td>Datos obtenidos</td><td>{{ datos['fechayhora'] }}</td></tr>
+			</tbody>
+			</table>
 			<a href="/"><img src="static/images/back.png" alt="Volver a la página de busqueda" width=93 height=93></a>
 				{% endfor %}
 			
