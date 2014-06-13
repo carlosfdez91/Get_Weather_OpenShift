@@ -2,10 +2,6 @@ from bottle import route, get, post, run, template, request, static_file, defaul
 from busqueda import buscar
 import os
 
-# @route('/')
-# def index():
-#     return template('inicio.tpl')
-
 @route('/')
 def entrada():
     return template("busqueda.html")
@@ -26,11 +22,6 @@ def busqueda():
     else:
         prevision = buscar(text)
         return template("resultado.html",datos=prevision)
-
-# @post('/resultado')
-# def vacio():
-#     nulo = buscar(text)
-#     return template("campo_vacio.html")    
 
 import os
 from bottle import TEMPLATE_PATH
