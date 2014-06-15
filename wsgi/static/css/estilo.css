@@ -191,13 +191,13 @@ body
 
 #centrar input[type=text]
 {
-	background: rgba(227, 231, 228, 1);
 	font-family: 100%/1.3 helvetica, arial, sans-serif;
 	font-size: 1.3125em;
 	border: 0;
 	text-align: left;
 	vertical-align: baseline;
 	margin-bottom:0 !important;
+	background: #333 !important;
 }
 
 #centrar input[type=text]:focus

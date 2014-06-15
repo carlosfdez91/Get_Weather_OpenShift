@@ -1,4 +1,4 @@
-from bottle import route, get, post, run, template, request, static_file, default_app
+from bottle import route, get, post, run, template, request, static_file, default_app, error
 from busqueda import buscar
 import os
 
@@ -22,6 +22,10 @@ def busqueda():
     else:
         prevision = buscar(text)
         return template("resultado.html",datos=prevision)
+
+@error(500)
+def error400(error):
+    return template("error.hmtl")
 
 import os
 from bottle import TEMPLATE_PATH

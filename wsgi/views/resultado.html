@@ -36,7 +36,7 @@
 			<table>
 				<tbody>
 				<tr>
-					<td><h1>Meteorologia actual en {{ datos['city'] }}</h1></td>
+					<td><h1>Meteorologia actual en <br>{{ datos['city'] }}</h1></td>
 				</tr>
 				<tr>
 					<td><h2><img src="static/images/{{ datos['cielo'] }}.png" title="{{ datos['reemplazar'] }}" width=285 height=200></td></h2>
@@ -53,7 +53,7 @@
 			<table class="table table-striped table-bordered table-condensed">
 			<tbody>
 				<tr><td>Nubosidad</td><td>{{ datos['reemplazar'] }}</td></tr>
-				<tr><td>Máxima prevista: {{ datos['alta'] }} ° C</td><td>Mínima prevista: {{ datos['baja'] }} ° C</td></tr>
+				<tr><td>Máxima prevista <br>Mínima prevista </td><td> {{ datos['alta'] }} ° C <br> {{ datos['baja'] }} ° C</td></tr>
 				<tr class="alt"><td>Sensación térmica</td><td>{{ datos['sensacion'] }} ° {{ datos['grados'] }}</td></tr>
 				<tr><td>Viento</td><td>{{ datos['direccion'] }} °<br>{{ datos['velocidad'] }} {{ datos['speed'] }}</td></tr>
 				<tr class="alt"><td>Humedad</td><td>{{ datos['humedad'] }} %</td></tr>
