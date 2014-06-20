@@ -27,6 +27,14 @@ def busqueda():
 def error400(error):
     return template("error.hmtl")
 
+@route('/about')
+def sobre():
+    return template("about.html")
+
+@route('/contacto')
+def contacto():
+    return template("contacto.html")
+
 import os
 from bottle import TEMPLATE_PATH
 
