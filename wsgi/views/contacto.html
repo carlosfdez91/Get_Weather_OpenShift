@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1 -strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+	<link rel="shortcut icon" href="static/images/favicon.ico">
+	<link rel="stylesheet" href="static/css/estilo.css" type="text/css" media="screen" />
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<div id="desaparecer">
+			<p>
+				{% for elemento in datos %}
+			</p>
+		</div>
+		<title>Get Weather!</title>
+	</head>
+	<body>
+		<div id="container">
+		<div id="header">
+			<h1>
+    			<a class="navbar-brand" href="/" title="Get Weather!">
+    			<img src="static/images/icono.png" alt="Get Weather!" /> 
+     			</a>
+  			</h1>
+		</div>
+		<div id="navigation">
+			<ul>
+				<li><a href="/">Inicio</a></li>
+				<li><a href="/about">Sobre</a></li>
+				<li><a href="/contacto">Contato</a></li>
+			</ul>
+		</div>
+		<div id="content-container1">
+		<div id="content-container2">
+		<div id="section-navigation">
+			<ul></ul>
+		</div>
+		<div id="row1col1">
+		</div>
+		<div id="error">
+			<p>Aplicación creada por: <a href="https://github.com/carlosfdez91">Carlos Fernández</a><br><a href="/"><img src="static/images/back.png" title="Volver a la página de busqueda" width=93 height=93></a></p>		
+	    </div>
+		<div id="aside">
+		</div>
+		</div>
+		</div>
+		</div>
+	</body>
+	<div id="desaparecer2">
+			<p>
+				{% endfor %}
+			</p>
+	</div>
+</html>
