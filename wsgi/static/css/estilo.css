@@ -26,7 +26,13 @@ body
 
 #row1col1 h3
 {
+	margin: 0 auto;
 	font-size: 85px;
+}
+
+#row1col1 p
+{
+	font-size: 20px;
 }
 
 #error
