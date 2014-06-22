@@ -5,7 +5,8 @@ def buscar(text):
 	from lxml import etree
 
 	yweatherns = "{http://xml.weather.yahoo.com/ns/rss/1.0}"
-
+	list_direccion = []
+	
 	nombre = text.lower()
 	nombresin = nombre.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("ñ","n");
 
@@ -39,7 +40,7 @@ def buscar(text):
 	tempactual = raiz2.find('channel/item/%scondition' % yweatherns).attrib["temp"]
 	grados = raiz2.find('channel/%sunits' % yweatherns).attrib["temperature"]
 	sensacion = raiz2.find('channel/%swind' % yweatherns).attrib["chill"]
-	direccion = raiz2.find('channel/%swind' % yweatherns).attrib["direction"]
+	direccion = float(raiz2.find('channel/%swind' % yweatherns).attrib["direction"])
 	velocidad = raiz2.find('channel/%swind' % yweatherns).attrib["speed"]
 	km = raiz2.find('channel/%sunits' % yweatherns).attrib["distance"]
 	speed = raiz2.find('channel/%sunits' % yweatherns).attrib["speed"]
@@ -93,6 +94,26 @@ def buscar(text):
 		,"Tormentas electricas aisladas").replace("3200"
 		,"No disponible");
 
+	def orientacion(direccion):
+		if direccion >= 337 and direccion < 22.5:
+			return 'N'
+		elif direccion >= 22.5 and direccion < 67.5:
+			return 'NE'
+		elif direccion >= 67.5 and direccion < 112.5:
+			return 'E'
+		elif direccion >= 112.5 and direccion < 157.5:
+			return 'SE'
+		elif direccion >= 157.5 and direccion < 202.5:
+			return 'S'
+		elif direccion >= 202.5 and direccion < 247.5:
+			return 'SO'
+		elif direccion >= 247.5 and direccion < 292.5:
+			return 'O'
+		elif direccion >= 292.5 and direccion < 337.5:
+			return 'NO'
+	
+	direccion = orientacion(direccion)
+	list_direccion.append(direccion)
 	
 	prevision = {
 	'tiempode':tiempode,
@@ -100,7 +121,7 @@ def buscar(text):
 	'tempactual':tempactual,
 	'grados':grados,
 	'sensacion':sensacion,
-	'direccion':direccion,
+	'list_direccion':list_direccion,
 	'velocidad':velocidad,
 	'speed':speed,
 	'humedad':humedad,

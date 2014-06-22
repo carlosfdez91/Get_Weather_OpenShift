@@ -16,16 +16,15 @@ def server_static(filename):
 
 @post('/resultado')
 def busqueda():
-    text = request.forms.get('text')
-    if text == "":
-        return template ("campo_vacio.html")
-    else:
-        prevision = buscar(text)
-        return template("resultado.html",datos=prevision)
-
-@error(500)
-def error400(error):
-    return template("error.hmtl")
+    try:
+        text = request.forms.get('text')
+        if text == "":
+            return template ("campo_vacio.html")
+        else:
+            prevision = buscar(text)
+            return template("resultado.html",datos=prevision)
+    except:
+        return template("error.html")         
 
 @route('/about')
 def sobre():

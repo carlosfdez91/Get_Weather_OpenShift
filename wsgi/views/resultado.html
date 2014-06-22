@@ -60,7 +60,7 @@
 			<tbody>
 				<tr><td>Nubosidad</td><td>{{ datos['reemplazar'] }}</td></tr>
 				<tr class="alt"><td>Sensación térmica</td><td>{{ datos['sensacion'] }} ° {{ datos['grados'] }}</td></tr>
-				<tr><td>Viento</td><td>{{ datos['direccion'] }} °<br>{{ datos['velocidad'] }} {{ datos['speed'] }}</td></tr>
+				<tr><td>Viento</td><td>Dirección <img src="static/images/{{ datos['list_direccion'] }}.png" title="" width=25 height=25><br>Velocidad {{ datos['velocidad'] }} {{ datos['speed'] }}</td></tr>
 				<tr class="alt"><td>Humedad</td><td>{{ datos['humedad'] }} %</td></tr>
 				<tr><td>Visibilidad</td><td>{{ datos['vision'] }} {{ datos['km'] }}</td></tr>
 				<tr class="alt"><td>Presión</td><td>{{ datos['presion'] }} {{ datos['press'] }}</td></tr>
