@@ -36,7 +36,7 @@
 			<table>
 				<tbody>
 				<tr>
-					<td><h1>Meteorologia actual en <br>{{ datos['city'] }}</h1></td>
+					<td><h1>Meteorología actual en <br>{{ datos['city'] }}</h1></td>
 				</tr>
 				<tr>
 					<td><h2><img src="static/images/{{ datos['cielo'] }}.png" title="{{ datos['reemplazar'] }}" width=285 height=200></td></h2>
@@ -64,8 +64,8 @@
 				<tr class="alt"><td>Humedad</td><td>{{ datos['humedad'] }} %</td></tr>
 				<tr><td>Visibilidad</td><td>{{ datos['vision'] }} {{ datos['km'] }}</td></tr>
 				<tr class="alt"><td>Presión</td><td>{{ datos['presion'] }} {{ datos['press'] }}</td></tr>
-				<tr><td>Amanecer</td><td>{{ datos['sol'] }}</td></tr>
-				<tr class="alt"><td>Ocaso</td><td>{{ datos['puesta'] }}</td></tr>
+				<tr><td>Amanecer <img src="static/images/amanecer.png" title="Amanecer"></td><td>{{ datos['sol'] }}</td></tr>
+				<tr class="alt"><td>Ocaso <img src="static/images/ocaso.png" title="Ocaso"></td><td>{{ datos['puesta'] }}</td></tr>
 				<tr><td>Actualización de datos</td><td>{{ datos['fechayhora'] }}</td></tr>
 				</tbody>
 			</table></div>
